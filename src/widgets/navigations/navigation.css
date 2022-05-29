@@ -1,0 +1,28 @@
+.navigation-outer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-inner {
+    width: 90%;
+    padding: 10px;
+    background-color: #050101e5;
+    display: flex;
+    border-radius: 8px;
+    justify-content: space-evenly;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.301);
+}
+
+.icons {
+    border: 0.8px solid rgba(255, 255, 255, 0.274);
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.icon-active {
+    border: 1px solid white;
+}

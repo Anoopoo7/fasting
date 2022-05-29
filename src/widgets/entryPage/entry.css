@@ -1,0 +1,46 @@
+.category-outer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.categories {
+    width: 48%;
+    background-color: rgba(0, 0, 0, 0.233);
+    margin: 1px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.entry-outer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5px;
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+.entry-card {
+    position: relative;
+    width: 95%;
+    padding: 25px;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.301);
+}
+
+.labels {
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.using {
+    position: absolute;
+    bottom: 1px;
+    right: 5px;
+}

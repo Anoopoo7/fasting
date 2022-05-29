@@ -1,0 +1,16 @@
+.tracking-card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #00000020;
+    border-radius: 5px;
+}
+
+.time {
+    flex: 1;
+}
+
+.description {
+    flex: 2;
+}
