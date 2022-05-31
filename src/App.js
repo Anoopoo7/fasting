@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Entrypage from "./pages/entrypage";
 import EntryDetails from "./pages/entryDetails";
 import Workoutpage from "./pages/workoutpage";
+import ProfilePage from "./pages/profilePage";
 
 export default function App() {
   return (
@@ -23,6 +24,9 @@ export default function App() {
           </Route>
           <Route exact path="/workout">
             <Workoutpage />
+          </Route>
+          <Route exact path="/profile">
+            <ProfilePage />
           </Route>
         </Switch>
       </BrowserRouter>
