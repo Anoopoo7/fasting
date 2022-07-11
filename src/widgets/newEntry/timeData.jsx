@@ -6,6 +6,7 @@ export default function TimeData() {
   const handleAdd = () => {
     const time = document.getElementById("time").value;
     const data = document.getElementById("data").value;
+    console.log(entrydata);
     setData([...entrydata, { time, data }]);
   };
   return (
@@ -39,7 +40,7 @@ export default function TimeData() {
         ))}
       {Array.isArray(entrydata) && entrydata.length>0 && <button
         className="form-control form-control-sm mt-2 btn btn-dark mb-4"
-        onClick={handleAdd}
+        // onClick={handleAdd}
       >
         next
       </button>}

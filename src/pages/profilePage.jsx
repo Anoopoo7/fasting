@@ -1,13 +1,11 @@
 import React from "react";
-import ProfileDetails from "../widgets/profilePage/profileDetails";
 import "../widgets/profilePage/profile.css";
-import FastPlan from "../widgets/profilePage/fastPlan";
+import Profilecontainer from "../widgets/profilePage/profilecontainer";
 
 export default function ProfilePage() {
   return (
     <div>
-      <ProfileDetails />
-      <FastPlan />
+      <Profilecontainer />
     </div>
   );
 }

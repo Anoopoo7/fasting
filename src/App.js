@@ -7,6 +7,8 @@ import Entrypage from "./pages/entrypage";
 import EntryDetails from "./pages/entryDetails";
 import Workoutpage from "./pages/workoutpage";
 import ProfilePage from "./pages/profilePage";
+import AuthentificationPage from "./pages/authentificationpage";
+
 
 export default function App() {
   return (
@@ -27,6 +29,9 @@ export default function App() {
           </Route>
           <Route exact path="/profile">
             <ProfilePage />
+          </Route>
+          <Route exact path="/auth">
+            <AuthentificationPage />
           </Route>
         </Switch>
       </BrowserRouter>
