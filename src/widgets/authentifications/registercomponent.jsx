@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Registercomponent({ setPageToggler }) {
     return (
@@ -40,7 +41,7 @@ function Registercomponent({ setPageToggler }) {
                                     </div>
 
                                     <button class="btn btn-dark btn-lg px-5" type="submit">Registers</button>
-                                    <p class="mb-0">Don't have an account? <a href="#login" onClick={() => setPageToggler(false)} class="text-white-50 fw-bold">Sign Up</a>
+                                    <p class="mb-0">Don't have an account? <Link to="#login" onClick={() => setPageToggler(false)} class="text-white-50 fw-bold">Sign Up</Link>
                                     </p>
                                 </div>
                             </div>

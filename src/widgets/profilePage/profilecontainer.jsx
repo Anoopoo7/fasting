@@ -2,17 +2,19 @@ import React, { useEffect } from 'react';
 import ProfileDetails from "./profileDetails";
 import FastPlan from "./fastPlan";
 import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom';
 
 
 function Profilecontainer() {
     const isLoggedIn = useSelector((state) => state.user.active)
+    const history = useHistory();
     useEffect(() => {
         if (!isLoggedIn) {
-            window.location.href = "/auth"
+            history.push("/auth")
         }
     }, [isLoggedIn])
     const logout = () => {
-        window.location.href = "/auth"
+        history.push("/auth")
     }
     return (
         <div>

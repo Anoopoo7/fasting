@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function Logincomponent({ setPageToggler, LoginHandler }) {
     return (
@@ -30,7 +31,7 @@ function Logincomponent({ setPageToggler, LoginHandler }) {
                                 </div>
 
                                 <div>
-                                    <p class="mb-0">Don't have an account? <a href="#reg" onClick={() => { setPageToggler(true) }} class="text-white-50 fw-bold">Sign Up</a>
+                                    <p class="mb-0">Don't have an account? <Link to="#reg" onClick={() => { setPageToggler(true) }} class="text-white-50 fw-bold">Sign Up</Link>
                                     </p>
                                 </div>
                             </div>

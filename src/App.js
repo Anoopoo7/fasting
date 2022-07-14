@@ -34,8 +34,8 @@ export default function App() {
             <AuthentificationPage />
           </Route>
         </Switch>
+        <Navigation />
       </BrowserRouter>
-      <Navigation />
     </div>
   );
 }
