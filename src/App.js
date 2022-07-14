@@ -29,8 +29,8 @@ export default function App() {
             <ProfilePage />
           </Route>
         </Switch>
+        <Navigation />
       </BrowserRouter>
-      <Navigation />
     </div>
   );
 }
