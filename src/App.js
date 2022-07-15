@@ -7,12 +7,18 @@ import Entrypage from "./pages/entrypage";
 import EntryDetails from "./pages/entryDetails";
 import Workoutpage from "./pages/workoutpage";
 import ProfilePage from "./pages/profilePage";
+import EmptyPage from "./pages/emptyPage";
+import firstUsingApp from "./localStorage/firstUsingApp";
 
 export default function App() {
+  const first = firstUsingApp.isFirstOpeningApp();
   return (
     <div className="app">
       <BrowserRouter>
         <Switch>
+          <Route exact path="/">
+            <EmptyPage first={first} />
+          </Route>
           <Route exact path="/home">
             <Homepage />
           </Route>
@@ -29,7 +35,7 @@ export default function App() {
             <ProfilePage />
           </Route>
         </Switch>
-        <Navigation />
+        {first && <Navigation />}
       </BrowserRouter>
     </div>
   );
