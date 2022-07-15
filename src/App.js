@@ -13,7 +13,7 @@ export default function App() {
     <div className="app">
       <BrowserRouter>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/home">
             <Homepage />
           </Route>
           <Route exact path="/entries">
