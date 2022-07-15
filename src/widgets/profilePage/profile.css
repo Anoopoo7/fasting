@@ -41,3 +41,44 @@ a {
     overflow: hidden;
     overflow-y: scroll;
 }
+.switcher{
+    display: flex;
+}
+.switcher .sm1{
+    border: 0.1px solid black;
+    border-radius: 5px;
+    padding: 1px 5px;
+    border-radius: 10px 1px 1px 10px;
+}
+.switcher .sm2{
+    border: 0.1px solid black;
+    border-radius: 5px;
+    padding: 1px 10px;
+    border-radius: 1px 10px 10px 1px;
+}
+.switcher .active{
+    background-color: rgba(0, 0, 0, 0.871);
+    color: white;
+}
+.settings-icon{
+    margin: 1px 10px;
+}
+
+
+/* registration */
+
+.registration-outer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.registration-inner{
+    width: 80%;
+    padding: 20px;
+}
+
+input{
+    margin: 5px 1px;
+}

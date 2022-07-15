@@ -9,6 +9,7 @@ import Workoutpage from "./pages/workoutpage";
 import ProfilePage from "./pages/profilePage";
 import EmptyPage from "./pages/emptyPage";
 import firstUsingApp from "./localStorage/firstUsingApp";
+import Settings from "./pages/settings";
 
 export default function App() {
   const first = firstUsingApp.isFirstOpeningApp();
@@ -33,6 +34,9 @@ export default function App() {
           </Route>
           <Route exact path="/profile">
             <ProfilePage />
+          </Route>
+          <Route exact path="/settings">
+            <Settings />
           </Route>
         </Switch>
         {first && <Navigation />}

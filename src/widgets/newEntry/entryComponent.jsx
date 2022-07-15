@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedPage from "../../animation/AnimatedPage";
 import BasicDetails from "./basicDetails";
 import Label from "./label";
 import Privacy from "./privacy";
@@ -22,7 +23,7 @@ export default function NewEntryComponent({
       <div className="cards m-2">
         <div className="card" onClick={() => handleClick("basicDetails")}>
           <div className="card-body">Basic Details</div>
-          {basicDetails && <BasicDetails />}
+          {basicDetails && <AnimatedPage> <BasicDetails /></AnimatedPage>}
           {/* <img
             src="/images/icons8-down-24.png"
             className="tick p-2"
@@ -40,7 +41,7 @@ export default function NewEntryComponent({
       <div className="cards m-2">
         <div className="card" onClick={() => handleClick("timeDateShedules")}>
           <div className="card-body">Time-Data Schedules</div>
-          {timeDateShedules && <TimeData />}
+          {timeDateShedules && <AnimatedPage><TimeData /></AnimatedPage>}
           <img
             src="/images/icons8-down-24.png"
             className="tick p-2"
@@ -58,25 +59,25 @@ export default function NewEntryComponent({
       <div className="cards m-2">
         <div className="card" onClick={() => handleClick("labels")}>
           <div className="card-body">Labels</div>
-          {labels && <Label />}
-          <img
+          {labels && <AnimatedPage><Label /></AnimatedPage>}
+          {/* <img
             src="/images/icons8-down-24.png"
             className="tick p-2"
             width={30}
             alt=""
-          />
-          {/* <img
+          /> */}
+          <img
             src="/images/icons8-checked-checkbox-24.png"
             className="tick"
             width={30}
             alt=""
-          /> */}
+          />
         </div>
       </div>
       <div className="cards m-2">
         <div className="card" onClick={() => handleClick("privacy")}>
           <div className="card-body">Privacy & Settings</div>
-          {privacy && <Privacy />}
+          {privacy && <AnimatedPage><Privacy /></AnimatedPage>}
           <img
             src="/images/icons8-down-24.png"
             className="tick p-2"
@@ -91,7 +92,7 @@ export default function NewEntryComponent({
           /> */}
         </div>
       </div>
-      <button className="btn cards" disabled={true}>
+      <button className="btn btn-dark cards" disabled={true}>
         Submit
       </button>
     </div>

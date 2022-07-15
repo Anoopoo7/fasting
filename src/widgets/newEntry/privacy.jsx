@@ -8,29 +8,23 @@ export default function Privacy() {
           <td>
             <input type="checkbox" name="" id="" />
           </td>
-          <td>Make it visibe to all</td>
+          <td><small>Make it visibe to all</small></td>
         </tr>
         <tr>
           <td>
             <input type="checkbox" name="" id="" />
           </td>
-          <td>Make it commentable</td>
+          <td><small>Make it commentable</small></td>
         </tr>
         <tr>
-            <td>
+          <td>
 
-            </td>
+          </td>
           <small>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsum
             architecto nobis blanditiis nam, at exercitationem provident culpa
             temporibus perspiciatis?
           </small>
-        </tr>
-        <tr>
-          <td>
-            <input type="checkbox" name="" id="" />
-          </td>
-          <td>accept the privacy and policy</td>
         </tr>
       </table>
       <button className="btn btn-dark form-control form-control-sm m-2">
