@@ -17,7 +17,7 @@
     color: inherit;
     width: 100%;
     /* background-color: aquamarine; */
-    border: 0.1px solid rgba(255, 255, 255, 0.818);
+    border: 0.9px solid rgba(255, 255, 255, 0.818);
     padding: 10px;
     border-radius: 10px;
     margin: 10px 1px;
@@ -25,6 +25,7 @@
     justify-content: space-between;
 
 }
-.edit-profile{
+
+.edit-profile {
     color: inherit;
 }

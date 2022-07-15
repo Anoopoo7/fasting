@@ -45,13 +45,13 @@ a {
     display: flex;
 }
 .switcher .sm1{
-    border: 0.1px solid black;
+    border: 0.9px solid black;
     border-radius: 5px;
     padding: 1px 5px;
     border-radius: 10px 1px 1px 10px;
 }
 .switcher .sm2{
-    border: 0.1px solid black;
+    border: 0.9px solid black;
     border-radius: 5px;
     padding: 1px 10px;
     border-radius: 1px 10px 10px 1px;
