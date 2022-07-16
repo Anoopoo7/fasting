@@ -23,21 +23,29 @@ const Authcontainer = ({ setLoading }) => {
             alert("Kindily fill the form!")
         }
     }
-
+    const varify = (data) => {
+        if (data.first_name == "") return false;
+        if (data.last_name == "") return false;
+        if (data.age == "") return false;
+        if (data.gender == null) return false;
+        if (data.email == "") return false;
+        if (data.password == "") return false;
+        if (data.c_password == null) return false;
+        if (data.password !== data.c_password) return false;
+    }
     const getRegistered = async (data) => {
         setLoading(true);
-        if (data.first_name == "") return;
-        if (data.last_name == "") return;
-        if (data.age == "") return;
-        if (data.gender == null) return;
-        if (data.email == "") return;
-        if (data.password == "") return;
-        if (data.c_password == null) return;
-        if (data.password !== data.c_password) return;
+        if (!varify) {
+            setLoading(false);
+            alert("invalid inputs")
+        }
         const isregistered = await userServices.register(data);
         setLoading(false);
         if (isregistered) {
             history.push("/profile")
+        }
+        else {
+            alert("cannot register this details")
         }
     }
 
