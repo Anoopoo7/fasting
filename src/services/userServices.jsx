@@ -15,9 +15,21 @@ const login = async (data) => {
     }
     return false;
 }
+const register = async (data) => {
+    const url = "/v1/user/register";
+    const request = await axios.post(baseUrl + url, data);
+    const response = request.data;
+    if (response && response.status && response.data) {
+        userStorage.setUser(response.data)
+        return true;
+    }
+    return false;
+}
+
 
 export default {
-    login
+    login,
+    register
 }
 
 
