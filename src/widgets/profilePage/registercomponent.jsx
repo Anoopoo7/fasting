@@ -30,7 +30,7 @@ const Registercomponent = ({ setLogin, getRegistered }) => {
                 <input type="email" ref={email} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" />
                 <input type="number" ref={age} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Age" />
                 <select ref={gender} class="form-control" id="exampleFormControlSelect1">
-                    <option value={null}>Gender</option>
+                    <option value="">Gender</option>
                     <option value="MALE">Male</option>
                     <option value="FEMALE">Female</option>
                 </select>

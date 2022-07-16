@@ -24,22 +24,22 @@ const Authcontainer = ({ setLoading }) => {
         }
     }
     const varify = (data) => {
-        if (data.first_name == "") return false;
-        if (data.last_name == "") return false;
-        if (data.age == "") return false;
-        if (data.gender == null) return false;
-        if (data.email == "") return false;
-        if (data.password == "") return false;
-        if (data.c_password == null) return false;
-        if (data.password !== data.c_password) return false;
+        if (data.first_name === "") return "Enter first name";
+        if (data.last_name === "") return "Enter last name";
+        if (data.age === "") return "Enter age";
+        if (data.gender === "") return "Enter gender";
+        if (data.email === "") return "Enter email";
+        if (data.password === "") return "Enter password";
+        if (data.c_password === "") return "Enter confirm password";
+        if (data.password !== data.c_password) return "passwords not matches";
+        return true
     }
     const getRegistered = async (data) => {
-        setLoading(true);
-        if (!varify) {
-            setLoading(false);
-            alert("invalid inputs")
+        if (varify(data) !== true) {
+            alert(varify(data));
             return;
         }
+        setLoading(true);
         const isregistered = await userServices.register(data);
         setLoading(false);
         if (isregistered) {

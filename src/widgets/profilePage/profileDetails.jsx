@@ -7,7 +7,7 @@ export default function ProfileDetails({ completed, setCompleted, goSettings, cu
         <img className="profile-img" src={curretUser.image} alt="" />
       </div>
       <br />
-      <b>{curretUser.first_name + " " + curretUser.last_name}</b>
+      <b>{curretUser.first_name}</b>
       <small>{curretUser.email}</small>
       <i className="p-2 pl-4 pr-4 text-center text-secondary">
         <small>
