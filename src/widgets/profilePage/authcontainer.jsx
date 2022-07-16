@@ -38,6 +38,7 @@ const Authcontainer = ({ setLoading }) => {
         if (!varify) {
             setLoading(false);
             alert("invalid inputs")
+            return;
         }
         const isregistered = await userServices.register(data);
         setLoading(false);
