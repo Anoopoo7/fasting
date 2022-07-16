@@ -12,8 +12,8 @@ const Authcontainer = ({ setLoading }) => {
         setLoading(true);
         if (data.email != "" && data.password != "") {
             const isLoggedIn = await userServices.login(data);
+            setLoading(false);
             if (isLoggedIn) {
-                setLoading(false    );
                 history.push("/profile")
             }
         }
