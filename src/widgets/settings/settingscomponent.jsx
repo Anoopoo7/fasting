@@ -2,7 +2,7 @@ import React from 'react';
 import AnimatedPage from '../../animation/AnimatedPage';
 import Editprofile from './editprofile';
 
-function Settingscomponent({ profileEdit, setProfileEdit }) {
+function Settingscomponent({ profileEdit, setProfileEdit, logout }) {
     return (
         <div className="settings-outer">
             <div className="settings-inner">
@@ -10,16 +10,16 @@ function Settingscomponent({ profileEdit, setProfileEdit }) {
                 <br />
                 <div className="s-border" onClick={() => { setProfileEdit(!profileEdit) }}>
                     Edit profile
-                    <img src="/images/icons8-edit-30.png" alt="" width={25}/>
+                    <img src="/images/icons8-edit-30.png" alt="" width={25} />
                 </div>
-                    {profileEdit && <AnimatedPage><Editprofile /></AnimatedPage>}
-                <div className="s-border">
+                {profileEdit && <AnimatedPage><Editprofile /></AnimatedPage>}
+                <div className="s-border" onClick={logout}>
                     Logout
-                    <img src="/images/icons8-logout-48.png" alt="" width={25}/>
+                    <img src="/images/icons8-logout-48.png" alt="" width={25} />
                 </div>
                 <div className="s-border">
                     Community updates
-                    <img src="/images/icons8-user-groups-64.png" alt="" width={25}/>
+                    <img src="/images/icons8-user-groups-64.png" alt="" width={25} />
                 </div>
             </div>
         </div>
