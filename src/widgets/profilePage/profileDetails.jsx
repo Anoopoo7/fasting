@@ -1,18 +1,17 @@
 import React from "react";
 
-export default function ProfileDetails({ completed, setCompleted, goSettings }) {
+export default function ProfileDetails({ completed, setCompleted, goSettings, curretUser }) {
   return (
     <div className="profile-outer">
       <div className="profile-pic">
-        <img src="" alt="" />
+        <img className="profile-img" src={curretUser.image} alt="" />
       </div>
       <br />
-      <b>Abu Abraham</b>
-      <small>abu.abraham@gmail.com</small>
+      <b>{curretUser.first_name + " " + curretUser.last_name}</b>
+      <small>{curretUser.email}</small>
       <i className="p-2 pl-4 pr-4 text-center text-secondary">
         <small>
-          ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-          veritatis, repudiandae illo animi ex sed.'
+          '{curretUser.bio} '
         </small>
       </i>
       <div className="switcher">

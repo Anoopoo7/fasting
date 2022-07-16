@@ -15,7 +15,7 @@ export default function Herobanner() {
             alt="First slide"
           />
           <div className="carousel-caption">
-              {/* <button className="btn btn-dark">click</button> */}
+            {/* <button className="btn btn-dark">click</button> */}
           </div>
         </div>
         <div className="carousel-item">
@@ -25,7 +25,7 @@ export default function Herobanner() {
             alt="Second slide"
           />
           <div className="carousel-caption">
-              {/* <button className="btn btn-dark">click</button> */}
+            {/* <button className="btn btn-dark">click</button> */}
           </div>
         </div>
         <div className="carousel-item">
@@ -35,7 +35,7 @@ export default function Herobanner() {
             alt="Third slide"
           />
           <div className="carousel-caption">
-              {/* <button className="btn btn-dark">click</button> */}
+            {/* <button className="btn btn-dark">click</button> */}
           </div>
         </div>
       </div>
