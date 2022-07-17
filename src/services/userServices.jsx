@@ -25,18 +25,31 @@ const register = async (data) => {
     }
     return false;
 }
+const editProfile = async (data) => {
+    const url = "/v1/user/edit";
+    const request = await axios.post(baseUrl + url, data);
+    const response = request.data;
+    if (response && response.status && response.data) {
+        userStorage.setUser(response.data)
+        return true;
+    }
+    return false;
+}
 
+const uploadPhoto = async (data) => {
+    const url = "/v1/user/photo";
+    const request = await axios.post(baseUrl + url, data);
+    const response = request.data;
+    if (response && response.status && response.data) {
+        userStorage.setUser(response.data)
+        return true;
+    }
+    return false;
+}
 
 export default {
     login,
-    register
+    register,
+    editProfile,
+    uploadPhoto
 }
-
-
-
-
-
-// {
-//     "email": "anoopviswanadh007gmail.com",
-//     "password": "anoop@123"
-// }

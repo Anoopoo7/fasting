@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
-function Editprofile({ }) {
+function Editprofile({ editProfile }) {
+    const name = useRef();
+    const bio = useRef();
+    const image = useRef();
+    const edit = () => {
+        editProfile({
+            first_name: name.current.value,
+            bio: bio.current.value,
+            image:image.current
+        })
+    }
     return (
         <div className='edit-profile'>
             <br />
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" />
-            <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Bio" />
+            <input ref={name} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" />
+            <textarea ref={bio} type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Bio" />
             <br />
-            <button type="submit" class="btn btn-light btn-outline btn-block">Submit</button>
+            <button type="submit" onClick={edit} class="btn btn-light btn-outline btn-block">Submit</button>
             <br /><br />
         </div>
     );

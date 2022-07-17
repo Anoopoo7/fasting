@@ -1,9 +1,9 @@
 import React from 'react';
 import Settingscontainer from '../widgets/settings/settingscontainer';
 
-function Settings({setLoading}) {
+function Settings({ setLoading }) {
     return (
-        <Settingscontainer />
+        <Settingscontainer setLoading={setLoading} />
     );
 }
 

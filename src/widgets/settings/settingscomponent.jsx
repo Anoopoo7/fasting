@@ -2,7 +2,7 @@ import React from 'react';
 import AnimatedPage from '../../animation/AnimatedPage';
 import Editprofile from './editprofile';
 
-function Settingscomponent({ profileEdit, setProfileEdit, logout }) {
+function Settingscomponent({ profileEdit, setProfileEdit, logout, editProfile, profilePicture, uploadPhoto }) {
     return (
         <div className="settings-outer">
             <div className="settings-inner">
@@ -12,10 +12,15 @@ function Settingscomponent({ profileEdit, setProfileEdit, logout }) {
                     Edit profile
                     <img src="/images/icons8-edit-30.png" alt="" width={25} />
                 </div>
-                {profileEdit && <AnimatedPage><Editprofile /></AnimatedPage>}
+                {profileEdit && <AnimatedPage><Editprofile editProfile={editProfile} /></AnimatedPage>}
+                <div className="s-border" >
+                    Upload profile Photo
+                    <input id="upload-photo" type="file" placeholder='enter' onChange={(e) => { uploadPhoto(e.target.files[0]) }} />
+                    <img src={profilePicture} alt="" width={25} />
+                </div>
                 <div className="s-border" onClick={logout}>
                     Logout
-                    <img src="/images/icons8-logout-48.png" alt="" width={25} />
+                    <img src="/images/icons8-logout-48.png" className="rounded" alt="" width={25} />
                 </div>
                 <div className="s-border">
                     Community updates
