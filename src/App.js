@@ -10,7 +10,7 @@ import ProfilePage from "./pages/profilePage";
 import EmptyPage from "./pages/emptyPage";
 import firstUsingApp from "./localStorage/firstUsingApp";
 import Settings from "./pages/settings";
-import Loader from "./widgets/loader";
+import Loader from "./widgets/common/loader";
 
 export default function App() {
   const first = firstUsingApp.isFirstOpeningApp();

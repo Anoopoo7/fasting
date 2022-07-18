@@ -2,7 +2,7 @@ import React from 'react';
 import AnimatedPage from '../../animation/AnimatedPage';
 import Editprofile from './editprofile';
 
-function Settingscomponent({ profileEdit, setProfileEdit, logout, editProfile, profilePicture, uploadPhoto }) {
+function Settingscomponent({ profileEdit, setProfileEdit, logout, editProfile, uploadPhoto }) {
     return (
         <div className="settings-outer">
             <div className="settings-inner">
@@ -16,7 +16,7 @@ function Settingscomponent({ profileEdit, setProfileEdit, logout, editProfile, p
                 <div className="s-border" >
                     Upload profile Photo
                     <input id="upload-photo" type="file" placeholder='enter' onChange={(e) => { uploadPhoto(e.target.files[0]) }} />
-                    <img src={profilePicture} alt="" width={25} />
+                    <img src="/images/icons8-upload-64.png" alt="" width={25} />
                 </div>
                 <div className="s-border" onClick={logout}>
                     Logout

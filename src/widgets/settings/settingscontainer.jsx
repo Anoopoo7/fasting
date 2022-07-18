@@ -60,7 +60,6 @@ function Settingscontainer({ setLoading }) {
                 setProfileEdit={setProfileEdit}
                 logout={logout}
                 editProfile={editProfile}
-                profilePicture={currentuser.image}
                 uploadPhoto={uploadPhoto}
             />
         </AnimatedPage>

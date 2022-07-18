@@ -1,5 +1,5 @@
 import React from "react";
-import Stars from "../stars";
+import Stars from "../common/stars";
 import { Link } from "react-router-dom";
 
 export default function Entry() {
