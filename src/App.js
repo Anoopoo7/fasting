@@ -12,6 +12,9 @@ import firstUsingApp from "./localStorage/firstUsingApp";
 import Settings from "./pages/settings";
 import Loader from "./widgets/common/loader";
 
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 export default function App() {
   const first = firstUsingApp.isFirstOpeningApp();
   const [loading, setLoading] = useState(false);
@@ -45,6 +48,17 @@ export default function App() {
           {first && <Navigation />}
         </BrowserRouter>
       </Loader>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

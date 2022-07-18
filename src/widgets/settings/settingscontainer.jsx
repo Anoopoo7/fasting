@@ -5,6 +5,7 @@ import "./settings.css"
 import userStorage from '../../localStorage/userStorage';
 import userServices from '../../services/userServices';
 import { useHistory } from 'react-router-dom';
+import { toast } from "react-toastify"
 
 function Settingscontainer({ setLoading }) {
     const history = useHistory();
@@ -13,6 +14,7 @@ function Settingscontainer({ setLoading }) {
 
     const logout = () => {
         const islogout = confirm("Are you sure to go out?");
+
         if (islogout) {
             userStorage.deleteUser();
             history.push("/profile");
@@ -32,7 +34,15 @@ function Settingscontainer({ setLoading }) {
         const isUpdated = await userServices.editProfile(editedData);
         setLoading(false);
         if (isUpdated) {
-            alert("userdetails updated successfully");
+            toast.success('successfully updated the profile', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
     }
     const uploadPhoto = async (file) => {
@@ -47,7 +57,15 @@ function Settingscontainer({ setLoading }) {
                 const isUpdated = await userServices.uploadPhoto(data);
                 setLoading(false);
                 if (isUpdated) {
-                    alert("photo updated successfully");
+                    toast.success('photo updated successfully', {
+                        position: "top-center",
+                        autoClose: 3000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
                 }
             }
             reader.readAsDataURL(file);

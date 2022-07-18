@@ -4,6 +4,7 @@ import Logincomponent from './logincomponent';
 import Registercomponent from './registercomponent';
 import userServices from '../../services/userServices';
 import { useHistory } from 'react-router-dom';
+import { toast } from "react-toastify"
 
 const Authcontainer = ({ setLoading }) => {
     const [login, setLogin] = useState(true);
@@ -20,7 +21,15 @@ const Authcontainer = ({ setLoading }) => {
         }
         else {
             setLoading(false);
-            alert("Kindily fill the form!")
+            toast('Kindily fill the form!', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
     }
     const varify = (data) => {
@@ -36,7 +45,15 @@ const Authcontainer = ({ setLoading }) => {
     }
     const getRegistered = async (data) => {
         if (varify(data) !== true) {
-            alert(varify(data));
+            toast.error(varify(data), {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             return;
         }
         setLoading(true);
@@ -46,7 +63,15 @@ const Authcontainer = ({ setLoading }) => {
             history.push("/profile")
         }
         else {
-            alert("cannot register this details")
+            toast.error('cannot register this details', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
     }
 
