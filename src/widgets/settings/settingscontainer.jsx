@@ -3,6 +3,7 @@ import AnimatedPage from '../../animation/AnimatedPage';
 import Settingscomponent from './settingscomponent';
 import "./settings.css"
 import userStorage from '../../localStorage/userStorage';
+import fastingplanStore from '../../localStorage/fastingplanStore';
 import userServices from '../../services/userServices';
 import { useHistory } from 'react-router-dom';
 import { toast } from "react-toastify"
@@ -17,6 +18,7 @@ function Settingscontainer({ setLoading }) {
 
         if (islogout) {
             userStorage.deleteUser();
+            fastingplanStore.deletePlan();
             history.push("/profile");
         }
     }
