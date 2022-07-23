@@ -20,6 +20,16 @@ const getUserPlan = async () => {
     return false;
 }
 
+const getListedPlan = async (pageNo) => {
+    const url = "/v1/plan/page/";
+    const request = await axios.get(baseUrl + url + pageNo);
+    const response = request.data;
+    if (response && response.status && response.data) {
+        return response.data;
+    }
+}
+
 export default {
-    getUserPlan
+    getUserPlan,
+    getListedPlan
 }

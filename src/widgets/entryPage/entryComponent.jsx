@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Pagination from "../common/pagination";
 import Categories from "./categories";
+import planServices from "../../services/planServices";
 import Entry from "./entry";
 import "./entry.css";
+import ContentLoader from "../common/contentLoader";
 
 export default function EntryComponent() {
+  const [plans, setPlans] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const getPlans = async (page) => {
+    setLoading(true);
+    const plan = await planServices.getListedPlan(page);
+    setLoading(false);
+    setPlans(plan);
+  }
+
+  useEffect(() => {
+    getPlans(0);
+  }, []);
   return (
     <div>
       <Categories />
@@ -17,23 +33,11 @@ export default function EntryComponent() {
         />
       </div>
       <div className="entry-outer">
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
-        <Entry />
+        {
+          loading ? <ContentLoader /> :
+            plans && plans.fastingPlan && plans && plans.fastingPlan.map(each => <Entry plan={each} />)
+        }
+        {!loading && plans && (plans.pages > 1) && <Pagination count={plans.pages} clickFunction={getPlans} currentPage={plans.currentPage} />}
       </div>
     </div>
   );

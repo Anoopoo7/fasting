@@ -4,6 +4,7 @@ import planServices from "../../../services/planServices";
 import "./progress.css";
 import fastingplanStore from "../../../localStorage/fastingplanStore";
 import planUtils from "../../../utils/planUtils";
+import ContentLoader from "../../common/contentLoader";
 
 export default function ProgressComponent() {
   const [currentplan, setCurrentPlan] = useState(false);
@@ -34,19 +35,7 @@ export default function ProgressComponent() {
     <div>
       {
         loading ?
-          <div className="m-5">
-            <h6 className="text-center">Searching for your dietPlan, please wait!</h6>
-            <div className="d-flex justify-content-center">
-              <div class="lds-ellipsis">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-          </div>
-          :
-          <Progresstracking currentplan={currentplan} />
+          <ContentLoader /> : <Progresstracking currentplan={currentplan} />
       }
     </div>
   );
