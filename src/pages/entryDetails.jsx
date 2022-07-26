@@ -1,11 +1,12 @@
-import React from "react";
-import ProgressComponent from "../widgets/homepage/progress/progressComponent";
+import React, { useEffect, useState } from "react";
 import AnimatedPage from "../animation/AnimatedPage";
+import EntryDetailsComponent from "../widgets/entryDetails/entryDetailsComponent";
 
-export default function EntryDetails({setLoading}) {
+export default function EntryDetails({ setLoading }) {
+  
   return (
     <AnimatedPage>
-      <ProgressComponent />
+      <EntryDetailsComponent />
     </AnimatedPage>
   );
 }

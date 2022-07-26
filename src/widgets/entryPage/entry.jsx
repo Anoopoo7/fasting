@@ -2,9 +2,9 @@ import React from "react";
 import Stars from "../common/stars";
 import { Link } from "react-router-dom";
 
-export default function Entry({ plan }) {
+export default function Entry({ plan, setSelectPlan }) {
   return (
-    <a href="/entry" className="entry-card text-dark">
+    <Link to="/entry" className="entry-card text-dark" onClick={() => setSelectPlan(plan)}>
       <h5>{plan.name}</h5>
       <table>
         <tr>
@@ -38,6 +38,6 @@ export default function Entry({ plan }) {
       <br />
       <br />
       <button className="btn">Start</button>
-    </a>
+    </Link>
   );
 }

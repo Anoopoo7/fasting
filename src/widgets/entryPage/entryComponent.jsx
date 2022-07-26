@@ -5,6 +5,7 @@ import planServices from "../../services/planServices";
 import Entry from "./entry";
 import "./entry.css";
 import ContentLoader from "../common/contentLoader";
+import fastingplanStore from "../../localStorage/fastingplanStore";
 
 export default function EntryComponent() {
   const [plans, setPlans] = useState(null);
@@ -17,6 +18,9 @@ export default function EntryComponent() {
     setPlans(plan);
   }
 
+  const setSelectPlan = (plan) => {
+    fastingplanStore.setSelectedPlan(plan);
+  }
   useEffect(() => {
     getPlans(0);
   }, []);
@@ -35,7 +39,7 @@ export default function EntryComponent() {
       <div className="entry-outer">
         {
           loading ? <ContentLoader /> :
-            plans && plans.fastingPlan && plans && plans.fastingPlan.map(each => <Entry plan={each} />)
+            plans && plans.fastingPlan && plans && plans.fastingPlan.map(each => <Entry plan={each} setSelectPlan={setSelectPlan} />)
         }
         {!loading && plans && (plans.pages > 1) && <Pagination count={plans.pages} clickFunction={getPlans} currentPage={plans.currentPage} />}
       </div>
