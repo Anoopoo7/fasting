@@ -1,16 +1,14 @@
 
 const findDate = (date, duration) => {
-    let [currentDate] = date.split("T");
-    let [year, month, day] = currentDate.split("-");
     const d = new Date();
-    let c_day = d.getDate();
-    if (c_day <= (day | 0) + duration) {
-        return true;
-    }
-    else {
-        return false;
-    }
-
+    let [startDate_string] = date.split("T");
+    let [currentDate_string] = d.toISOString().split("T");
+    const startDate = new Date(startDate_string);
+    const currentDate = new Date(currentDate_string);
+    // const startDate = new Date("2022-06-26");
+    // const currentDate = new Date("2022-06-31");
+    let day_difference = (currentDate - startDate) / 86400000;
+    return day_difference >= 0 && (duration - day_difference) > 0;
 }
 const findTime = (each) => {
     const [hr, min] = each.time.split(":")

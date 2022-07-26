@@ -2,7 +2,6 @@ import React from "react";
 
 export default function Progresstracking({ currentplan }) {
   const trackingElement = (each) => {
-    console.log(each);
     return (
       <div className={`tracking-card ${each.status == "DONE" ? "bg-success" : each.status == "PASSED" ? "bg-secondary" : ""}`}>
         <div className="time"> {each.time}</div>

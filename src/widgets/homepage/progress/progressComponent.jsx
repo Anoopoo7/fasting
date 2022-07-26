@@ -17,6 +17,8 @@ export default function ProgressComponent() {
     let activeplan = planUtils.verifyPlan(plan);
     if (activeplan) {
       setCurrentPlan({ ...plan, fasting_items: activeplan });
+    } else {
+      fastingplanStore.deletePlan();
     }
   }
   useEffect(() => {
@@ -25,6 +27,8 @@ export default function ProgressComponent() {
       let activeplan = planUtils.verifyPlan(plan);
       if (activeplan) {
         setCurrentPlan({ ...plan, fasting_items: activeplan });
+      } else {
+        fastingplanStore.deletePlan();
       }
     }
     else {
