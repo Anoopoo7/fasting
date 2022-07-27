@@ -25,7 +25,7 @@ export default function Progresstracking({ currentplan }) {
           <div className="text-center mt-5">
             <img src="/giff/desolazione_empty_1.gif" alt="" width={350} />
             <br />
-            <small>You have't activated any diet plan !</small>
+            <small>You have't activated any diet plan for Today !</small>
           </div>
       }
     </div>

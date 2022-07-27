@@ -3,10 +3,10 @@ import AnimatedPage from "../animation/AnimatedPage";
 import EntryDetailsComponent from "../widgets/entryDetails/entryDetailsComponent";
 
 export default function EntryDetails({ setLoading }) {
-  
+
   return (
     <AnimatedPage>
-      <EntryDetailsComponent />
+      <EntryDetailsComponent setLoading={setLoading} />
     </AnimatedPage>
   );
 }

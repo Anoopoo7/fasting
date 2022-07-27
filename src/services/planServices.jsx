@@ -29,7 +29,19 @@ const getListedPlan = async (pageNo) => {
     }
 }
 
+const startPlan = async (plan) => {
+    const url = "/v1/plan/startPlan";
+    const request = await axios.post(baseUrl + url, plan);
+    const response = request.data;
+    if (response && response.status && response.data) {
+        fastingplanStore.setFastingPlan(response.data);
+        return true;
+    }
+    else return false;
+}
+
 export default {
     getUserPlan,
-    getListedPlan
+    getListedPlan,
+    startPlan
 }
