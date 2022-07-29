@@ -1,9 +1,17 @@
 import React from "react";
+import Confirm from "../../common/confirm";
 
-export default function Progresstracking({ currentplan }) {
+export default function Progresstracking({
+  currentplan,
+  completeModal,
+  setCompleteModel,
+  completeModalData,
+  handleModal,
+  submitModal
+}) {
   const trackingElement = (each) => {
     return (
-      <div className={`tracking-card ${each.status == "DONE" ? "bg-success" : each.status == "PASSED" ? "bg-secondary" : ""}`}>
+      <div className={`tracking-card ${each.status == "DONE" ? "bg-success" : each.status == "PASSED" ? "bg-secondary" : ""}`} onClick={() => handleModal(each)}>
         <div className="time"> {each.time}</div>
         <div className="description">{each.data}</div>
       </div>
@@ -11,6 +19,14 @@ export default function Progresstracking({ currentplan }) {
   };
   return (
     <div>
+      {
+        completeModal &&
+        <Confirm
+          setCompleteModel={setCompleteModel}
+          completeModalData={completeModalData}
+          submitModal={submitModal}
+        />
+      }
       {
         currentplan ?
           <div className="card m-2">

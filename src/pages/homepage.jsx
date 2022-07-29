@@ -9,7 +9,7 @@ export default function Homepage({ setLoading }) {
     <AnimatedPage>
       <Navbar />
       <Herobanner />
-      <ProgressComponent />
+      <ProgressComponent setLoadingGlobal={setLoading} />
     </AnimatedPage>
   );
 }

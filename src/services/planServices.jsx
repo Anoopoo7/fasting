@@ -40,8 +40,23 @@ const startPlan = async (plan) => {
     else return false;
 }
 
+const updatePlanItemStatus = async (plan) => {
+    const userId = userStorage.getUser() ? userStorage.getUser().id : false;
+    if (userId) {
+        const url = "/v1/plan/update/userId/" + userId;
+        const request = await axios.post(baseUrl + url, plan);
+        const response = request.data;
+        if (response && response.status && response.data) {
+            fastingplanStore.setFastingPlan(response.data);
+            return true;
+        }
+    }
+    else return false;
+}
+
 export default {
     getUserPlan,
     getListedPlan,
-    startPlan
+    startPlan,
+    updatePlanItemStatus
 }

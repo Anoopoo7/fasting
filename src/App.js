@@ -14,6 +14,7 @@ import Loader from "./widgets/common/loader";
 
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Success from "./pages/success";
 
 export default function App() {
   const first = firstUsingApp.isFirstOpeningApp();
@@ -25,6 +26,9 @@ export default function App() {
           <Switch>
             <Route exact path="/">
               <EmptyPage first={first} setLoading={setLoading} />
+            </Route>
+            <Route exact path="/success">
+              <Success setLoading={setLoading} />
             </Route>
             <Route exact path="/home" setLoading={setLoading} >
               <Homepage setLoading={setLoading} />

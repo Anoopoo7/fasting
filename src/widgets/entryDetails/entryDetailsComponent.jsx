@@ -3,7 +3,7 @@ import fastingplanStore from '../../localStorage/fastingplanStore';
 import EntryDetailsTemplate from './entryDetails';
 import planServices from '../../services/planServices';
 import userStorage from '../../localStorage/userStorage';
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 
 function EntryDetailsComponent({ setLoading }) {
     const [plan, setPlan] = useState(false);

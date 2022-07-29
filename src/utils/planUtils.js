@@ -49,6 +49,24 @@ const verifyPlan = (plan) => {
     return false;
 }
 
+const verifyPlanUpdation = (item) => {
+    if (item.status === "DONE") {
+        return false;
+    }
+    const [hr, min] = item.time.split(":");
+    const planTime = new Date();
+    planTime.setHours(hr);
+    planTime.setMinutes(min);
+    const currentTime = new Date();
+
+    const diff = (currentTime.getTime() - planTime.getTime()) / 60000;
+    if (diff ** 2 <= 100) {
+        return true;
+    }
+    return false;
+}
+
 export default {
-    verifyPlan
+    verifyPlan,
+    verifyPlanUpdation
 };
