@@ -5,6 +5,7 @@ import FastPlan from './fastPlan';
 import ProfileDetails from './profileDetails';
 import userStorage from '../../localStorage/userStorage';
 import planServices from '../../services/planServices';
+import ContentLoader from '../common/contentLoader';
 
 function ProfileContainer({ setLoading }) {
     const history = useHistory();
@@ -36,6 +37,7 @@ function ProfileContainer({ setLoading }) {
                 goSettings={goSettings}
                 curretUser={curretUser}
             />}
+            {logged && !plans && <ContentLoader />}
             {logged && plans && <FastPlan plans={plans} />}
             {!logged && <Authcontainer setLoading={setLoading} />}
         </div>
