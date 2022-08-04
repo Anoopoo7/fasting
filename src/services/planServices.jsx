@@ -54,9 +54,23 @@ const updatePlanItemStatus = async (plan) => {
     else return false;
 }
 
+const getAllPlansByuserId = async () => {
+    const userId = userStorage.getUser() ? userStorage.getUser().id : false;
+    if (userId) {
+        const url = "/v1/plan/all/userId/";
+        const request = await axios.get(baseUrl + url + `${userId}`);
+        const response = request.data;
+        if (response && response.status && response.data && response.data.length > 0) {
+            return response.data;
+        }
+    }
+    return false;
+}
+
 export default {
     getUserPlan,
     getListedPlan,
     startPlan,
-    updatePlanItemStatus
+    updatePlanItemStatus,
+    getAllPlansByuserId
 }

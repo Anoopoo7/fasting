@@ -1,104 +1,18 @@
 import React from "react";
 
-export default function FastPlan() {
+export default function FastPlan({ plans }) {
   return (
     <div className="profile-outer profile-scroller">
-      <a href="/entry" className="fastPlan-outer mt-3 active">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 ">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 ">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 active">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 ">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 ">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 active">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 ">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 ">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 active">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 ">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
-      <a href="/entry" className="fastPlan-outer mt-3 ">
-        <b>
-          <h6>Keto III</h6>
-        </b>
-        <b>
-          <h6>Day 03/05</h6>
-        </b>
-      </a>
+      {plans.map(plan =>
+        <a href="/entry" className={`fastPlan-outer mt-3 ${plan.enabled ? "active" : ""}`}>
+          <b>
+            <h6>{plan.fastingPlan.name}</h6>
+          </b>
+          <b>
+            <h6>{plan.startDate.split("T")[0]}</h6>
+          </b>
+        </a>)
+      }
     </div>
   );
 }
