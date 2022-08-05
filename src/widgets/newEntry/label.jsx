@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Label() {
+export default function Label({ setData, data }) {
   return (
     <div className="label-outer">
       <table>

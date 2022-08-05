@@ -67,10 +67,24 @@ const getAllPlansByuserId = async () => {
     return false;
 }
 
+const ceateNewPlan = async (data) => {
+    const userId = userStorage.getUser() ? userStorage.getUser().id : false;
+    if (userId) {
+        const url = "/v1/plan/add/";
+        const request = await axios.post(baseUrl + url, data);
+        const response = request.data;
+        if (response && response.status && response.data) {
+            return true;
+        }
+    }
+    return false;
+}
+
 export default {
     getUserPlan,
     getListedPlan,
     startPlan,
     updatePlanItemStatus,
-    getAllPlansByuserId
+    getAllPlansByuserId,
+    ceateNewPlan
 }

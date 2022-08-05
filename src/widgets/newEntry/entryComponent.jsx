@@ -11,6 +11,10 @@ export default function NewEntryComponent({
   labels,
   privacy,
   handleClick,
+  setData,
+  data,
+  submit,
+  submitPlan
 }) {
   return (
     <div className="new-entry-outer">
@@ -23,31 +27,31 @@ export default function NewEntryComponent({
       <div className="cards m-2">
         <div className="card" onClick={() => handleClick("basicDetails")}>
           <div className="card-body">Basic Details</div>
-          {basicDetails && <AnimatedPage> <BasicDetails /></AnimatedPage>}
-          {/* <img
+          {basicDetails && <AnimatedPage> <BasicDetails setData={setData} data={data} /></AnimatedPage>}
+          {!basicDetails && <img
             src="/images/icons8-down-24.png"
             className="tick p-2"
             width={30}
             alt=""
-          /> */}
-          <img
+          />}
+          {/* <img
             src="/images/icons8-checked-checkbox-24.png"
             className="tick"
             width={30}
             alt=""
-          />
+          /> */}
         </div>
       </div>
       <div className="cards m-2">
         <div className="card" onClick={() => handleClick("timeDateShedules")}>
           <div className="card-body">Time-Data Schedules</div>
-          {timeDateShedules && <AnimatedPage><TimeData /></AnimatedPage>}
-          <img
+          {timeDateShedules && <AnimatedPage><TimeData setData={setData} data={data} /></AnimatedPage>}
+          {!timeDateShedules && <img
             src="/images/icons8-down-24.png"
             className="tick p-2"
             width={30}
             alt=""
-          />
+          />}
           {/* <img
             src="/images/icons8-checked-checkbox-24.png"
             className="tick"
@@ -59,31 +63,31 @@ export default function NewEntryComponent({
       <div className="cards m-2">
         <div className="card" onClick={() => handleClick("labels")}>
           <div className="card-body">Labels</div>
-          {labels && <AnimatedPage><Label /></AnimatedPage>}
-          {/* <img
+          {labels && <AnimatedPage><Label setData={setData} data={data} /></AnimatedPage>}
+          {!labels && <img
             src="/images/icons8-down-24.png"
             className="tick p-2"
             width={30}
             alt=""
-          /> */}
-          <img
+          />}
+          {/* <img
             src="/images/icons8-checked-checkbox-24.png"
             className="tick"
             width={30}
             alt=""
-          />
+          /> */}
         </div>
       </div>
       <div className="cards m-2">
         <div className="card" onClick={() => handleClick("privacy")}>
           <div className="card-body">Privacy & Settings</div>
           {privacy && <AnimatedPage><Privacy /></AnimatedPage>}
-          <img
+          {!privacy && <img
             src="/images/icons8-down-24.png"
             className="tick p-2"
             width={30}
             alt=""
-          />
+          />}
           {/* <img
             src="/images/icons8-checked-checkbox-24.png"
             className="tick"
@@ -92,7 +96,7 @@ export default function NewEntryComponent({
           /> */}
         </div>
       </div>
-      <button className="btn btn-dark cards" disabled={true}>
+      <button className="btn btn-dark cards" disabled={submit} onClick={submitPlan}>
         Submit
       </button>
     </div>

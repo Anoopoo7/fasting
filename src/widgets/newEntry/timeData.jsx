@@ -1,13 +1,16 @@
 import React from "react";
 import { useState } from "react";
 
-export default function TimeData() {
-  const [entrydata, setData] = useState([]);
+export default function TimeData({ setData, data }) {
+  const [entrydata, setTimes] = useState([]);
   const handleAdd = () => {
     const time = document.getElementById("time").value;
     const data = document.getElementById("data").value;
-    setData([...entrydata, { time, data }]);
+    setTimes([...entrydata, { time, data }]);
   };
+  const handleSend = () => {
+    setData({ ...data, TIMEDATA: entrydata })
+  }
   return (
     <div className="m-2">
       <div className="d-flex">
@@ -37,9 +40,9 @@ export default function TimeData() {
             <div className="txt-fi text-justify">{each.data}</div>
           </div>
         ))}
-      {Array.isArray(entrydata) && entrydata.length>0 && <button
+      {Array.isArray(entrydata) && entrydata.length > 0 && <button
         className="form-control form-control-sm mt-2 btn btn-dark mb-4"
-        onClick={handleAdd}
+        onClick={handleSend}
       >
         next
       </button>}
